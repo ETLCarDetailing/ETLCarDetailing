@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ETL Car Detailing</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">ETL Car Detailing</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#services">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#special-offer">Special Offer</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="py-5 text-center">
+        <div class="container">
+            <h1 class="display-4">Shining Your Ride, Wherever You Are</h1>
+            <p class="lead">Welcome to ETL Car Detailing! We are a mobile car detailing business that comes to your door and provides a detailing service like no other.</p>
+            <img src="images/Logo.png" class="img-fluid" alt="Car Detailing">
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5 bg-light">
+        <div class="container">
+            <h2>About Us</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="images/Cleaned_EdisonsCar.png" class="img-fluid" alt="About Us">
+                </div>
+                <div class="col-md-6">
+                    <p>We are a mobile car detailing business that will come to your door and provide a detailing service like no other, offering interior and exterior detailing services that will be sure to leave your car with a shining glow and a great new feel. Our mobile service ensures we can reach you wherever you are, whether at home, work, or any other location, providing unparalleled convenience. With our expert knowledge and professional-grade equipment, we tackle every nook and cranny of your vehicle, ensuring a thorough clean that enhances the aesthetic and extends the life of your car's surfaces. Experience the luxury of a professionally detailed car without the hassle of traveling to a detailing shop—contact us today and let us bring our exceptional car care services right to your doorstep, whenever and wherever you need us.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-5">
+        <div class="container">
+            <h2>Services</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="images/LeftCar.jpeg" class="card-img-top img-fluid" alt="Complete Detailing">
+                        <div class="card-body">
+                            <h3 class="card-title">Complete Detailing Package</h3>
+                            <p class="card-text">$90</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="images/MiddleCar.jpeg" class="card-img-top img-fluid" alt="Exterior Detailing">
+                        <div class="card-body">
+                            <h3 class="card-title">Exterior Detailing</h3>
+                            <p class="card-text">$50</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="images/RightCar.jpeg" class="card-img-top img-fluid" alt="Interior Detailing">
+                        <div class="card-body">
+                            <h3 class="card-title">Interior Detailing</h3>
+                            <p class="card-text">$50 + $20 for deep seat and carpet clean</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Offer Section -->
+    <section id="special-offer" class="py-5 bg-light">
+        <div class="container">
+            <h2>Special Offer</h2>
+            <p>Get Your Car Sparkling Like New with the FULL DETAILING PACKAGE for $90. Your car will have a new look and feel.</p>
+            <img src="images/your-new-offer-image.png" class="img-fluid" alt="Special Offer">
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+   <section id="contact" class="py-5">
+    <div class="container">
+        <h2>Contact</h2>
+        <form action="https://formspree.io/f/mldrbdvq" method="POST">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="phone">Phone</label>
+                    <input type="text" class="form-control" id="phone" name="phone" placeholder="Your Phone" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea class="form-control" id="message" name="message" rows="4" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Contact Us</button>
+        </form>
+        <div class="mt-4">
+            <p>Austins Ferry TAS, Australia</p>
+            <p>Phone: +61-0484321265</p>
+            <p>Email: edisonlee.tas@gmail.com</p>
+            <p>Inquiries: 24/7</p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3150.0458707283257!2d147.2613061152488!3d-42.83038627915626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d8d8d7fd9c8d373%3A0x2b8b08b8a41e1a0b!2sAustins%20Ferry%2C%20Tasmania%207011%2C%20Australia!5e0!3m2!1sen!2us!4v1633123338454!5m2!1sen!2us" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+</section>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
