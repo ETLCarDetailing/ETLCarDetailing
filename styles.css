@@ -9,10 +9,11 @@ body {
     z-index: 1000;
     width: 100%;
     background-color: #f8f9fa; /* Ensure the background color matches the rest of the navbar */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow for better visibility */
 }
 
-.section-padding {
-    padding-top: 80px; /* Adjust based on the height of your navbar */
+.navbar-brand img {
+    width: 150px;
 }
 
 .hero-section {
@@ -49,6 +50,16 @@ body {
 
 .hero-buttons a {
     margin: 10px;
+}
+
+.section-padding {
+    padding-top: 100px; /* Adjust based on the height of your navbar */
+}
+
+.section-padding-fix {
+    position: relative;
+    padding-top: calc(100px + 20px); /* Adjust based on your navbar height + extra space */
+    margin-top: -100px; /* Adjust based on your navbar height */
 }
 
 body.dark-mode {
@@ -116,4 +127,30 @@ footer a:hover {
 [data-aos="fade-up"].aos-animate {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Styles for Appointment Form */
+.appointment-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.appointment-form .form-group {
+    margin-bottom: 1rem;
+}
+
+.appointment-form label {
+    font-weight: bold;
+}
+
+.appointment-form .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.appointment-form .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
 }
