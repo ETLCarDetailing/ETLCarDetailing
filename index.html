@@ -14,17 +14,34 @@
     <style>
         /* Add your existing styles here */
         
-        /* Sticky button styles */
-        #book-now-button {
-            position: -webkit-sticky; /* For Safari */
-            position: sticky;
-            bottom: 20px; /* Adjust as needed */
-            z-index: 1000; /* Ensure it appears above other content */
-        }
-
-        /* Add margin to the contact section */
+        /* Adjust margin to the contact section */
         #contact {
             margin-top: 50px; /* Adjust the value as needed */
+        }
+
+        /* Add smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Ensure navbar doesn't block the top of sections */
+        .navbar a {
+            cursor: pointer;
+        }
+
+        .section-padding {
+            padding: 60px 0;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        body {
+            padding-top: 60px; /* Adjust to the height of the navbar */
         }
     </style>
 </head>
@@ -66,20 +83,19 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero-section section-padding-fix">
+    <section id="home" class="hero-section section-padding">
         <div class="hero-overlay"></div>
         <div class="container hero-content">
             <h1>Shining Your Ride, Wherever You Are</h1>
             <p>Welcome to ETL Car Detailing! We are a mobile car detailing business in Austins Ferry that comes to your door and provides a detailing service like no other.</p>
             <div class="hero-buttons">
-                <a href="#services" class="btn btn-primary">Our Services</a>
                 <a href="#contact" class="btn btn-secondary">Contact Us</a>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="section-padding section-padding-fix py-5 bg-light" data-aos="fade-up">
+    <section id="about" class="section-padding py-5 bg-light" data-aos="fade-up">
         <div class="container">
             <h2>About Us</h2>
             <div class="row">
@@ -94,7 +110,7 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="section-padding section-padding-fix py-5" data-aos="fade-up">
+    <section id="services" class="section-padding py-5" data-aos="fade-up">
         <div class="container">
             <h2>Our Car Detailing Services in Austins Ferry</h2>
             <div class="row">
@@ -120,8 +136,7 @@
                             <p class="card-text">$50</p>
                             <ul>
                                 <li>Hand wash and dry</li>
-                                <li>Clay bar treatment</li>
-                                <li>Wax and polish</li>
+                                <li>Wheel and Guard cleaning/degreasing</li>
                             </ul>
                         </div>
                     </div>
@@ -145,7 +160,7 @@
     </section>
 
     <!-- Special Offer Section -->
-    <section id="special-offer" class="section-padding section-padding-fix py-5 bg-light" data-aos="fade-up">
+    <section id="special-offer" class="section-padding py-5 bg-light" data-aos="fade-up">
         <div class="container">
             <h2>Monthly Package</h2>
             <p>Introducing our exclusive Monthly Clean Package! Enjoy the luxury of a professionally detailed car every month while saving $10 on each full detailing service. With our Monthly Clean Package, you'll keep your vehicle in pristine condition all year round, ensuring it always looks its best. Our expert team will come to your location at a convenient time for you, providing top-notch interior and exterior detailing services that maintain the beauty and longevity of your car. Sign up today and experience the benefits of regular, discounted car care with ETL Car Detailing</p>
@@ -153,38 +168,8 @@
         </div>
     </section>
 
-    <!-- Booking System Section -->
-    <section id="booking" class="section-padding section-padding-fix py-5" data-aos="fade-up">
-        <div class="container">
-            <h2>Book an Appointment</h2>
-            <form action="booking.php" method="POST" class="appointment-form">
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="date">Preferred Date</label>
-                        <input type="date" class="form-control" id="date" name="date" required>
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="time">Preferred Time</label>
-                        <select class="form-control" id="time" name="time" required>
-                            <!-- Time options will be populated by JavaScript -->
-                        </select>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="service">Select Service</label>
-                    <select class="form-control" id="service" name="service" required>
-                        <option value="complete">Complete Detailing Package</option>
-                        <option value="exterior">Exterior Detailing</option>
-                        <option value="interior">Interior Detailing</option>
-                    </select>
-                </div>
-                <button type="submit" class="btn btn-primary" id="book-now-button">Book Now</button>
-            </form>
-        </div>
-    </section>
-
     <!-- Contact Section -->
-    <section id="contact" class="section-padding section-padding-fix py-5 bg-light" data-aos="fade-up">
+    <section id="contact" class="section-padding py-5 bg-light" data-aos="fade-up">
         <div class="container">
             <h2>Contact Us</h2>
             <form action="https://formspree.io/f/mldrbdvq" method="POST">
@@ -205,7 +190,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="message">Message</label>
+                    <label for="message">Message(include what package you would like)</label>
                     <textarea class="form-control" id="message" name="message" rows="4" placeholder="Your Message" required></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary">Contact Us</button>
@@ -221,7 +206,7 @@
     </section>
 
     <!-- FAQ Section -->
-    <section id="faq" class="section-padding section-padding-fix py-5 bg-light" data-aos="fade-up">
+    <section id="faq" class="section-padding py-5 bg-light" data-aos="fade-up">
         <div class="container">
             <h2>Frequently Asked Questions</h2>
             <div class="accordion" id="faqAccordion">
@@ -276,9 +261,7 @@
         <div class="container">
             <p>&copy; 2024 ETL Car Detailing. All rights reserved.</p>
             <div>
-                <a href="https://facebook.com" target="_blank"><img src="images/facebook-icon.png" alt="Facebook"></a>
-                <a href="https://twitter.com" target="_blank"><img src="images/twitter-icon.png" alt="Twitter"></a>
-                <a href="https://instagram.com/etl_cardetailing" target="_blank"><img src="images/instagram-icon.png" alt="Instagram"></a>
+                <a href="https://instagram.com/etl_cardetailing" target="_blank">Instagram</a>
             </div>
         </div>
     </footer>
@@ -310,45 +293,6 @@
             document.body.scrollTop = 0;
             document.documentElement.scrollTop = 0;
         }
-
-        document.getElementById('date').addEventListener('change', function () {
-            const selectedDate = new Date(this.value);
-            const selectedDay = selectedDate.getUTCDay();
-            const timeSelect = document.getElementById('time');
-            timeSelect.innerHTML = '';
-
-            let timeOptions = [];
-            if (selectedDay === 0 || selectedDay === 6) { // Weekend
-                timeOptions = [
-                    "07:00 AM", "08:00 AM", "09:00 AM", "10:00 AM",
-                    "11:00 AM", "12:00 PM", "01:00 PM", "02:00 PM",
-                    "03:00 PM", "04:00 PM"
-                ];
-            } else { // Weekday
-                timeOptions = [
-                    "04:00 PM", "05:00 PM", "06:00 PM", "07:00 PM",
-                    "08:00 PM", "09:00 PM", "10:00 PM"
-                ];
-            }
-
-            timeOptions.forEach(time => {
-                const option = document.createElement('option');
-                option.value = time;
-                option.text = time;
-                timeSelect.add(option);
-            });
-        });
-
-        // Live Chat Integration
-        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-        (function(){
-            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-            s1.async = true;
-            s1.src = 'https://embed.tawk.to/YOUR_PROPERTY_ID/default';
-            s1.charset = 'UTF-8';
-            s1.setAttribute('crossorigin', '*');
-            s0.parentNode.insertBefore(s1, s0);
-        })();
 
         // Adjust scroll position to account for navbar height
         document.addEventListener('DOMContentLoaded', function() {
