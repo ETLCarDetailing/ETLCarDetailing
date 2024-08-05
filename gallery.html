@@ -6,10 +6,79 @@
     <title>Gallery - ETL Car Detailing</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            scroll-behavior: smooth;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: background-color 0.5s;
+        }
+        .navbar.scrolled {
+            background-color: rgba(0, 0, 0, 0.8) !important;
+        }
+        .navbar a {
+            cursor: pointer;
+            color: #fff !important;
+        }
+        .section-padding {
+            padding: 60px 0;
+        }
+        .btn-secondary {
+            background-color: #ff4500;
+            border: none;
+            animation: fadeInUp 1s;
+        }
+        .btn-secondary:hover {
+            background-color: #ff6347;
+        }
+        .card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            margin-bottom: 30px;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        footer {
+            background: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .dark-mode {
+            background-color: #121212;
+            color: #fff;
+        }
+        .dark-mode .navbar, .dark-mode footer, .dark-mode .card, .dark-mode .testimonial {
+            background-color: #1e1e1e;
+            color: #fff;
+        }
+        .dark-mode .btn-primary, .dark-mode .btn-secondary {
+            background-color: #ff4500;
+            border: none;
+        }
+        @keyframes fadeInUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">ETL Car Detailing</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -34,16 +103,19 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="gallery.html">Gallery</a>
                 </li>
+                <li class="nav-item">
+                    <button id="dark-mode-toggle" class="btn btn-secondary ml-3">Toggle Dark Mode</button>
+                </li>
             </ul>
         </div>
     </nav>
 
     <!-- Gallery Section -->
-    <section id="gallery" class="py-5">
+    <section id="gallery" class="section-padding py-5">
         <div class="container">
             <h2>Gallery</h2>
             <div class="row">
-                <div class="col-md-4 mb-4">
+                <div class="col-md-4">
                     <div class="card">
                         <img src="images/MessyBootBefore.png" class="card-img-top img-fluid" alt="Before">
                         <div class="card-body">
@@ -51,7 +123,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
+                <div class="col-md-4">
                     <div class="card">
                         <img src="images/CleanBootAfter.png" class="card-img-top img-fluid" alt="After">
                         <div class="card-body">
@@ -59,7 +131,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
+                <div class="col-md-4">
                     <div class="card">
                         <img src="images/FinishedCar.png" class="card-img-top img-fluid" alt="Finished Product">
                         <div class="card-body">
@@ -68,13 +140,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-<section id="gallery" class="py-5">
-        <div class="container">
-            <h2>Gallery</h2>
             <div class="row">
-                <div class="col-md-4 mb-4">
+                <div class="col-md-4">
                     <div class="card">
                         <img src="images/MessyCenterConsoleBefore.png" class="card-img-top img-fluid" alt="Before">
                         <div class="card-body">
@@ -82,7 +149,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
+                <div class="col-md-4">
                     <div class="card">
                         <img src="images/CleanCenterConsoleAfter.png" class="card-img-top img-fluid" alt="After">
                         <div class="card-body">
@@ -90,9 +157,35 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
+                <div class="col-md-4">
                     <div class="card">
                         <img src="images/FinishedProduct.png" class="card-img-top img-fluid" alt="Finished Product">
+                        <div class="card-body">
+                            <h3 class="card-title">Finished Product</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="images/Dirtynewcar.png" class="card-img-top img-fluid" alt="Before">
+                        <div class="card-body">
+                            <h3 class="card-title">Before</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="images/Cleannewcar.png" class="card-img-top img-fluid" alt="After">
+                        <div class="card-body">
+                            <h3 class="card-title">After</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="images/finishedproduct1.png" class="card-img-top img-fluid" alt="Finished Product">
                         <div class="card-body">
                             <h3 class="card-title">Finished Product</h3>
                         </div>
@@ -102,8 +195,57 @@
         </div>
     </section>
 
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 ETL Car Detailing. All rights reserved.</p>
+            <div>
+                <a href="https://instagram.com/etl_cardetailing" target="_blank">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        const toggleButton = document.getElementById('dark-mode-toggle');
+        toggleButton.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            const darkModeEnabled = document.body.classList.contains('dark-mode');
+            localStorage.setItem('darkMode', darkModeEnabled);
+        });
+
+        const darkModePreference = localStorage.getItem('darkMode');
+        if (darkModePreference === 'true') {
+            document.body.classList.add('dark-mode');
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var navbarHeight = document.querySelector('.navbar').offsetHeight;
+
+            document.querySelectorAll('.navbar a[href^="#"], .hero-buttons a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+
+                    var targetElement = document.querySelector(this.getAttribute('href'));
+                    var targetPosition = targetElement.offsetTop - navbarHeight;
+
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+
+        window.addEventListener('scroll', function() {
+            var navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
 </body>
 </html>
